@@ -1,0 +1,506 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background: white;
+    transition: all .5s ease;
+}
+
+.sidebar header {
+    font-size: 22px;
+    color: rgb(3, 85, 1);
+    text-align: center;
+    line-height: 70px;
+    background: white;
+    user-select: none;
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: rgb(3, 85, 1);
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgb(238, 246, 5,.1);
+    border-bottom: 1px solid rgb(3, 85, 1);
+    transition: .4s;
+}
+
+ul li:hover a {
+    padding-left: 50px;
+}
+
+.sidebar ul a i {
+    margin-right: 16px;
+}
+
+#check {
+    display: none;
+}
+
+label #btn, label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: rgb(3, 85, 1);
+    border-radius: 3px;
+}
+
+label #btn {
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s;
+    position: fixed;
+}
+
+label #cancel {
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: rgb(6, 175, 3);
+    padding: 4px 9px;
+    transition: all .5s;
+    position: fixed;
+}
+
+#check:checked ~ .sidebar {
+    left: 0;
+}
+
+#check:checked ~ label #btn {
+    left: 200px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ #homepage {
+    margin-left: 200px;
+}
+
+#check:checked ~ #about {
+    margin-left: 200px;
+}
+
+#check:checked ~ #service {
+    margin-left: 200px;
+}
+
+#check:checked ~ #contact {
+    margin-left: 200px;
+}
+
+#check:checked ~ label #cancel {
+    left: 160px;
+}
+
+/* Homepage */
+
+#homepage {
+    background-color: white;
+    background: url(../images/check.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: all .5s;
+}
+
+/* About */
+
+#about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background: url(../images/flyerdesign_17032022_154405.png);
+    background-position: center;
+    background-size: cover;
+    transition: all .5s;
+}
+
+#about .para {
+    width: 400px;
+    margin-right: 100px;
+    padding: 10px 15px;
+    background-color: rgba(3, 85, 1, 0.97);
+    color: white;
+}
+
+#about p {
+    font-size: 21px;
+}
+
+.pic {
+    width: 400px;
+    margin-left: 100px;
+}
+
+.pic .ab-pic {
+    width: 400px;
+    height: 530px;
+}
+
+/* Service */
+
+#service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background: url(../images/flyerdesign_17032022_154405.png);
+    background-position: center;
+    background-size: cover;
+    transition: all .5s;
+}
+
+.pic1 {
+    width: 400px;
+    margin-right: 100px;
+}
+
+.pic1 .ob-pic {
+    width: 400px;
+    height: 530px;
+}
+
+#service .para1 {
+    width: 400px;
+    margin-left: 100px;
+    padding: 10px 15px;
+    background-color: rgba(3, 85, 1, .97);
+    color: white;
+}
+
+#service p {
+    font-size: 21px;
+}
+
+/* Contact */
+
+#contact {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    font-family: sans-serif;
+    
+}
+
+.contact-info {
+    color: rgb(3, 85, 1);
+    max-width: 400px;
+    line-height: 65px;
+    padding-left: 100px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact-info a {
+    color: rgb(3, 85, 1);
+}
+
+.contact-info i {
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin-right: 100px;
+}
+
+/*.contact-info, .contact-form {
+    flex: 1;
+}*/
+
+.contact-form h2 {
+    color: rgb(3, 85, 1);
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.contact-form .text-box {
+    background: rgb(238, 246, 5);
+    color: #000;
+    border: none;
+    width: calc(45% - 10px);
+    height: 30px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-form .text-box:first-child {
+    margin-right: 15px;
+}
+
+.contact-form textarea {
+    background: rgb(238, 246, 5);
+    color: #000;
+    border: none;
+    width: 95%;
+    padding: 12px;
+    font-size: 15px;
+    min-height: 200px;
+    max-height: 400px;
+    resize: vertical;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-form .send-btn {
+    float: right;
+    background: rgb(3, 85, 1);
+    color: #fff;
+    border: none;
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.contact-form .send-btn:hover {
+    background: rgb(6, 175, 3);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(3, 85, 1);
+    color: white;
+    height: 30px;
+  }
+
+@media only screen and (max-width:400px) {
+    .sidebar header {
+        font-size: 20px;
+        line-height: 50px;
+    }
+    
+    .sidebar ul a {
+        line-height: 50px;
+        font-size: 18px;
+    }
+
+    #check:checked ~ label #btn {
+        left: 200px;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #check:checked ~ #homepage {
+        margin-left: 200px;
+    }
+
+    #check:checked ~ #about {
+        margin-left: 200px;
+    }
+
+    #check:checked ~ #service {
+        margin-left: 200px;
+    }
+
+    #check:checked ~ #contact {
+        margin-left: 200px;
+    }
+
+    #check:checked ~ label #cancel {
+        left: 160px;
+    } 
+
+    #homepage {
+        height: 600px;
+        background-color: white;
+        background-image: url(../images/mobile1.png);
+        transition: all .5s;
+    }
+
+    #about {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        background-image: none;
+        transition: all .5s;
+    }
+
+    #about .para {
+        width: 250px;
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 10px 10px;
+        background-color: rgba(3, 85, 1, 0.97);
+        color: white;
+    }
+
+    #about p {
+        font-size: 15px;
+    }
+
+    .pic {
+        width: 250px;
+        margin: 10px 10px 10px 10px;
+
+    }
+
+    .pic .ab-pic {
+        width: 250px;
+        height: 300px;
+    }
+
+    /* Service */
+
+    #service {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        background-color: white;
+        background-image: none;
+        transition: all .5s;
+    }
+
+    .pic1 {
+        width: 250px;
+        margin: 10px 10px 10px 0;
+    }
+
+    .pic1 .ob-pic {
+        width: 250px;
+        height: 300px;
+    }
+
+    #service .para1 {
+        width: 250px;
+        margin: 10px 10px 10px 10px;
+        padding: 10px 10px;
+        background-color: rgba(3, 85, 1, 0.97);
+        color: white;
+    }
+
+    #service p {
+        font-size: 15px;
+    }
+
+    /* Contact */
+
+    #contact {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        background-color: white;
+        background-image: none;
+        transition: all .5s; 
+    }
+
+    .contact-info {
+        color: rgb(3, 85, 1);
+        width: 250px;
+        margin: 10px 10px 10px 10px;
+        line-height: 30px;
+        padding-left: 0px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .contact-info i {
+        margin-right: 15px;
+        font-size: 20px;
+    }
+    
+    .contact-form {
+        max-width: 250px;
+        margin-right: 0px;
+    }
+
+    .contact-form h2 {
+        color: rgb(3, 85, 1);
+        text-align: center;
+        font-size: 25px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .contact-form .text-box {
+        background: rgb(238, 246, 5);
+        color: #000;
+        border: none;
+        width: 100px;
+        height: 10px;
+        padding: 10px;
+        font-size: 15px;
+        border-radius: 5px;
+        box-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+        margin-bottom: 15px;
+        opacity: 0.9;
+    }
+
+    .contact-form .text-box:first-child {
+        margin-right: 5px;
+    }
+    
+    .contact-form textarea {
+        background: rgb(238, 246, 5);
+        color: #000;
+        border: none;
+        width: 230px;
+        padding: 10px;
+        font-size: 15px;
+        min-height: 100px;
+        max-height: 200px;
+        resize: vertical;
+        border-radius: 5px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        opacity: 0.9;
+    }
+
+    .contact-form .send-btn {
+        float: center;
+        background: rgb(3, 85, 1);
+        color: #fff;
+        border: none;
+        width: 90px;
+        height: 33px;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+}
